@@ -16,7 +16,6 @@ podTemplate(containers: [
                     // https://www.jenkins.io/doc/pipeline/steps/git/
                     git 'https://github.com/zenpython97/sample_gradle_app.git'
                     sh '''
-                    cd Chapter08/sample1
                     chmod +x gradlew
                     ./gradlew test
                     '''
@@ -25,7 +24,6 @@ podTemplate(containers: [
                         try {
                             sh '''
                             pwd
-                            cd Chapter08/sample1
                             ./gradlew jacocoTestCoverageVerification
                             ./gradlew jacocoTestReport
                             '''
@@ -35,7 +33,7 @@ podTemplate(containers: [
                         // from the HTML publisher plugin
                         // https://www.jenkins.io/doc/pipeline/steps/htmlpublisher/
                         publishHTML (target: [
-                            reportDir: 'Chapter08/sample1/build/reports/tests/test',
+                            reportDir: '/build/reports/tests/test',
                             reportFiles: 'index.html',
                             reportName: "JaCoCo Report"
                         ])
