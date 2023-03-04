@@ -14,7 +14,7 @@ podTemplate(containers: [
                     stage('Build a gradle project') {
                     // from the git plugin
                     // https://www.jenkins.io/doc/pipeline/steps/git/
-                    git 'https://github.com/zenpython97/sample_gradle_app.git'
+                    git branch: 'main', url: 'https://github.com/zenpython97/sample_gradle_app.git' 
                     sh '''
                     chmod +x gradlew
                     ./gradlew test
