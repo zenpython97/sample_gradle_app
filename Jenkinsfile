@@ -33,7 +33,7 @@ podTemplate(containers: [
                         // from the HTML publisher plugin
                         // https://www.jenkins.io/doc/pipeline/steps/htmlpublisher/
                         publishHTML (target: [
-                            reportDir: '/build/reports/tests/test',
+                            reportDir: 'sample_gradle/build/reports/tests/test',
                             reportFiles: 'index.html',
                             reportName: "JaCoCo Report"
                         ])
